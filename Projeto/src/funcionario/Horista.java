@@ -17,6 +17,6 @@ public class Horista extends Funcionario{
     }
 
     public void setHorasTrabalhadas(double horasTrabalhadas){
-        horasTrabralhadas = horasTrabalhadas;
+        this.horasTrabalhadas = horasTrabalhadas;
     }
 }

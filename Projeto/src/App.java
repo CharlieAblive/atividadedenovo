@@ -34,7 +34,7 @@ public class App {
                             System.out.println("Salário Bruto: ");
                             horista1.setSalario(inputString.nextDouble());
                             System.out.println("Horas trabalhadas no Mês: ");
-                            
+                            horista1.setHorasTrabalhadas(input.nextInt());
                             Horista novoHorista = new Horista();
                             break;
                     
