@@ -8,7 +8,6 @@ public class App {
         Scanner input = new Scanner(System.in);
         Scanner inputString = new Scanner(System.in);
         int opcao;
-
         //menu 
         do {
             System.out.println("~~~Menu de Funcionários~~~");
@@ -76,20 +75,17 @@ public class App {
                             break;
                     }
                     break;
-
                 //informacoes do funcionario
                 case 2:
                     System.out.println(horista1.getNome() + " " + horista1.getId() + " " + horista1.getSalario() + ".");
                     System.out.println(comissionado1.getNome() + " " + comissionado1.getId() + " " + comissionado1.getSalario() + ".");
                     System.out.println(assalariado1.getNome() + " " + assalariado1.getId() + " " + assalariado1.getSalario() + ".");
                     break;
-
                 //gasto total
                 case 3:
                     double gastoTotal = horista1.getSalario() + comissionado1.getSalario() + assalariado1.getSalario();
                     System.out.println("O total de gastos da empresa para este mês é de R$" + gastoTotal + ".");
                     break;
-
                 //funcionario com maior salario
                 case 4:
                     if (horista1.getSalario() > comissionado1.getSalario() && horista1.getSalario() > assalariado1.getSalario()) {
@@ -101,7 +97,8 @@ public class App {
                     }
                     break;
                 default:
-
+                System.out.println("Opção Inválida");
+                break;
             }
         } while (opcao != 5);   
 
