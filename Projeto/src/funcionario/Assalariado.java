@@ -11,4 +11,10 @@ public class Assalariado extends Funcionario{
         setSalario(getSalario() + bonusFixo);
         return getSalario();
     }
+    public double getBonus(){
+        return bonusFixo;
+    }
+    public void setBonus(double bonusFixo){
+        this.bonusFixo = bonusFixo;
+}
 }

@@ -13,4 +13,10 @@ public class Comissionado extends Funcionario{
         setSalario(getSalario() + (taxaComissao * vendas));
         return getSalario();
     }
+    public int getVendas(){
+        return vendas;
+    }
+    public void setVendas(int vendas){
+        this.vendas = vendas;
+    }
 }
