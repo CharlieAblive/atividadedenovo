@@ -2,13 +2,13 @@ import java.util.Scanner;
 import funcionario.*;
 public class App {
     public static void main(String[] args) {
+        
         Horista horista1 = new Horista(null, 0, 0, 0);
         Comissionado comissionado1 = new Comissionado(null, 0, 0, 0);
         Assalariado assalariado1 = new Assalariado(null, 0, 0, 0);
         Scanner input = new Scanner(System.in);
         Scanner inputString = new Scanner(System.in);
-        int opcao = input.nextInt();
-        System.out.println("teste");
+        int opcao;
         do {
             System.out.println("Menu de Funcionários");
             System.out.println("Escolha uma opção:");
@@ -17,7 +17,7 @@ public class App {
             System.out.println("3- Exibir total de gastos");
             System.out.println("4- Exibir funcionario com maior pagamento");
             System.out.println("5- Sair");
-            
+            opcao = input.nextInt();
             switch (opcao) {
                 case 1:
                     System.out.println("Selecione o tipo de funcionário:");
@@ -33,7 +33,7 @@ public class App {
                             System.out.println("ID: ");
                             horista1.setId(input.nextInt());
                             System.out.println("Salário Bruto: ");
-                            horista1.setSalario(inputString.nextDouble());
+                            horista1.setSalario(input.nextDouble());
                             System.out.println("Horas trabalhadas no Mês: ");
                             horista1.setHorasTrabalhadas(input.nextInt());  
                             horista1 = new Horista(horista1.getNome(), horista1.getId(), horista1.getSalario(), horista1.getHorasTrabalhadas());  
@@ -45,7 +45,7 @@ public class App {
                             System.out.println("ID: ");
                             comissionado1.setId(input.nextInt());
                             System.out.println("Salário Bruto: ");
-                            comissionado1.setSalario(inputString.nextDouble());
+                            comissionado1.setSalario(input.nextDouble());
                             System.out.println("Total de vendas no mês ");
                             comissionado1.setVendas(input.nextInt());  
                             comissionado1 = new Comissionado(comissionado1.getNome(), comissionado1.getId(), comissionado1.getSalario(), comissionado1.getVendas());  
@@ -57,7 +57,7 @@ public class App {
                             System.out.println("ID: ");
                             assalariado1.setId(input.nextInt());
                             System.out.println("Salário Bruto: ");
-                            assalariado1.setSalario(inputString.nextDouble());
+                            assalariado1.setSalario(input.nextDouble());
                             System.out.println("Total de vendas no mês ");
                             assalariado1.setBonus(input.nextInt());  
                             assalariado1 = new Assalariado(assalariado1.getNome(), assalariado1.getId(), assalariado1.getSalario(), assalariado1.getBonus());  
