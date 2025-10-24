@@ -1,4 +1,5 @@
 package funcionario;
+import funcionario.SistemaFuncionario;
 
 public class Horista extends Funcionario{
     private double horasTrabalhadas;
@@ -21,4 +22,6 @@ public class Horista extends Funcionario{
     public void setHorasTrabalhadas(double horasTrabalhadas){
         this.horasTrabalhadas = horasTrabalhadas;
     }
+
+
 }
