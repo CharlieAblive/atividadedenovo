@@ -1,4 +1,6 @@
 package funcionario;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public abstract class Funcionario {
     private String nome;

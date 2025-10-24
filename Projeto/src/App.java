@@ -1,7 +1,12 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 import funcionario.*;
 public class App {
     public static void main(String[] args) {
+        List listHorista = new ArrayList<>();
+        List listComissionado = new ArrayList<>();
+        List listAssalariado = new ArrayList<>();
         Horista horista1 = new Horista(null, 0, 0, 0);
         Comissionado comissionado1 = new Comissionado(null, 0, 0, 0);
         Assalariado assalariado1 = new Assalariado(null, 0, 0, 0);
@@ -65,8 +70,8 @@ public class App {
                             assalariado1.setId(input.nextInt());
                             System.out.println("Salário Bruto: ");
                             assalariado1.setSalario(input.nextDouble());
-                            System.out.println("Total de vendas no mês ");
-                            assalariado1.setBonus(input.nextInt());  
+                            System.out.println("Bônus fixo");
+                            assalariado1.setBonus(input.nextDouble());  
                             assalariado1 = new Assalariado(assalariado1.getNome(), assalariado1.getId(), assalariado1.getSalario(), assalariado1.getBonus());  
                             System.out.println("Funcionario adicionado.");
                             break;
