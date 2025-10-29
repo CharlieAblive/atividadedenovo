@@ -1,38 +1,87 @@
 package funcionario;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class SistemaFuncionario {
-    private ArrayList listFuncionarios;
+    private List<Horista> listHorista;
+    private List<Comissionado> listComissionado;
+    private List<Assalariado> listAssalariado;
     Scanner input = new Scanner(System.in);
     Scanner inputString = new Scanner(System.in);
-    int i;
-    public void SistemaFuncionarios() {
-        listFuncionarios = new ArrayList<>();
+    int i = 0;
+
+    public SistemaFuncionario() {
+        listHorista = new ArrayList<Horista>();
+        listComissionado = new ArrayList<Comissionado>();
+        listAssalariado = new ArrayList<Assalariado>();
     }
 
-    public void addFuncionarioHorista(){
-        for (i = 0; i < listFuncionarios.size(); i++) {
+    public double calcularTotalSalarios(){
+        double totalSalarioAssalariado = 0;
+        double totalSalarioComissionado = 0;
+        double totalSalarioHorista = 0;
+
+        for(Horista h : listHorista){
+            totalSalarioHorista = h.getSalarioTotal(); 
         }
-        Horista novoHorista = new Horista(null, 0, 0, 0);
-        System.out.println("Digite as informações do novo funcionario horista: ");
-        System.out.println("Nome: ");
-        novoHorista.setNome(inputString.nextLine());
-        System.out.println("ID: ");
-        novoHorista.setId(input.nextInt());
-        System.out.println("Salário Bruto: ");
-        novoHorista.setSalario(input.nextDouble());
-        System.out.println("Horas trabalhadas no Mês: ");
-        novoHorista.setHorasTrabalhadas(input.nextInt());  
-        System.out.println("Funcionario adicionado.");
-        listFuncionarios.add(i, novoHorista);
 
+        for(Comissionado c : listComissionado){
+            totalSalarioComissionado = c.getSalarioTotal(); 
+        }
+
+        for(Assalariado a : listAssalariado){
+            totalSalarioAssalariado = a.getSalarioTotal(); 
+        }
+        double totalSalarios = totalSalarioHorista + totalSalarioComissionado + totalSalarioAssalariado;
+        return totalSalarios;
     }
-    public void addFuncionarioComissionado(){
-        listFuncionarios.add(new Comissionado(null, 0, 0, 0));
+
+    public double funcionarioMaisSalario(){
+        
+        for(Horista h : listHorista){
+            double maior = Collections.max(h.getSalarioTotal());
+        }
     }
-    public void addFuncionarioAssalariado(){
-        listFuncionarios.add(new Assalariado(null, 0, 0, 0));
+    
+
+    public void listarHoristas() {
+    for (int i = 0; i < listHorista.size(); i++) {
+    System.out.println(listHorista.get(i));
+        }
+    }
+
+    public void listarComissionados() {
+    for (int i = 0; i < listComissionado.size(); i++) {
+    System.out.println(listComissionado.get(i));
+        }
+    }
+
+    public void listarAssalariado() {
+    for (int i = 0; i < listAssalariado.size(); i++) {
+    System.out.println(listAssalariado.get(i));
+        }
+    }
+
+
+    public void addFuncionarioHorista(String nome, int id, double salario, double horasTrabalhadas){
+        listHorista.add(new Horista(nome, id, salario, horasTrabalhadas));
+        for (i = 0; i < listHorista.size(); i++) {
+        }
+        System.out.println("Funcionario adicionado.");
+    }
+    public void addFuncionarioComissionado(String nome, int id, double salario, int vendas){
+        for (i = 0; i < listComissionado.size(); i++) {
+        }
+        listComissionado.add(new Comissionado(nome, id, salario, vendas));
+        System.out.println("Funcionario adicionado.");
+    }
+    public void addFuncionarioAssalariado(String nome, int id, double salario, double bonusFixo){
+        for (i = 0; i < listAssalariado.size(); i++) {
+        }
+        listAssalariado.add(new Assalariado(nome, id, salario, bonusFixo));
+        System.out.println("Funcionario adicionado.");
     }
     
 }

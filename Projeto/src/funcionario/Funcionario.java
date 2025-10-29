@@ -3,12 +3,12 @@ package funcionario;
 public abstract class Funcionario {
     private String nome;
     private int id;
-    private double salario;
+    private double salarioLiquido;
 
-    public Funcionario(String nome, int id, double salario){
+    public Funcionario(String nome, int id, double salarioLiquido){
         this.nome = nome;
         this.id = id;
-        this.salario = salario;
+        this.salarioLiquido = salarioLiquido;
     }
 
     public String getNome(){
@@ -19,8 +19,8 @@ public abstract class Funcionario {
         return id;
     }
 
-    public double getSalario(){
-        return salario;
+    public double getSalarioLiquido(){
+        return salarioLiquido;
     }
 
     public void setNome(String nome) {
@@ -38,14 +38,14 @@ public abstract class Funcionario {
         }
     }
 
-    public void setSalario(double salario) {
-        if (salario >= 0) {
-            this.salario = salario;
+    public void setSalario(double salarioLiquido) {
+        if (salarioLiquido >= 0) {
+            this.salarioLiquido = salarioLiquido;
         } else {
             System.out.println("Erro");
         }
     }
 
-    public abstract double calcularPagamento();
+    public abstract double getSalarioTotal();
 
 }
